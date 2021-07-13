@@ -1,0 +1,5 @@
+== Operadores Booleanos ==
+Digite 0 para falso e nao 0 para verdadeiroEntre com o primeiro valor (A): Entre com o segundo valor (B): A and B: 1
+A or B: 1
+A xor B: 0
+not A: 0
