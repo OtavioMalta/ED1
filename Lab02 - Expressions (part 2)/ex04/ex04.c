@@ -2,6 +2,24 @@
 
 int main() {
     printf("<< Calculo da Media >>\n");
+    float media, n1, n2, n3, p1,p2,p3;
+    char inicial;
+    printf("Digite o nome do aluno: ");
+    scanf("%c",&inicial);
+    printf("Digite a nota da prova 1: ");
+    scanf("%f",&n1);
+    printf("Digite a nota da prova 2: ");
+    scanf("%f",&n2);
+    printf("Digite a nota da prova 3: ");
+    scanf("%f",&n3);
+    printf("digite o peso da prova 1: ");
+    scanf("%f",&p1);
+    printf("digite o peso da prova 2: ");
+    scanf("%f",&p2);
+    printf("digite o peso da prova 3: ");
+    scanf("%f",&p3);
+    media=((n1*p1)+(n2*p2)+(n3*p3))/(p1+p2+p3);
+    printf("A nota media do aluno %c eh %.2f", inicial, media);
 }
 
 /*

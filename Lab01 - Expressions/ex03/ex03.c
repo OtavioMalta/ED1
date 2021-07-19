@@ -2,6 +2,10 @@
 
 int main() {
     printf("<< Sucessor e Antecessor >>\n");
+    int numero;
+    printf("Digite um numero:");
+    scanf("%d",&numero);
+    printf("\nAntecessor: %d\nNumero: %d\nSucessor: %d",numero-1,numero,numero+1);
 }
 
 /*

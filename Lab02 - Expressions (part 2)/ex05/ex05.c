@@ -1,7 +1,19 @@
 #include <stdio.h>
 
 int main() {
+    int b1,b2,b3,b4, bin, decimal;
     printf("== Conversor de numeros binarios ==\n");
+    printf("Digite o 1o. bit: ");
+    scanf("%d",&b1);
+    printf("Digite o 2o. bit: ");
+    scanf("%d",&b2);
+    printf("Digite o 3o. bit: ");
+    scanf("%d",&b3);
+    printf("Digite o 4o. bit: ");
+    scanf("%d",&b4);
+    bin = b1*1000+b2*100+b3*10+b4;
+    decimal = b1*8 + b2*4 + b3*2 + 1; //1x2³+1x2²+0x2¹+1x2º
+    printf("O numero binario %d corresponde ao numero decial %d",bin,decimal );
 }
 
 /*

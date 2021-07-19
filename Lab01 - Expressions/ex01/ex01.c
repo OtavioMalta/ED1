@@ -2,6 +2,10 @@
 
 int main(){
     printf("<< Calculo do Quadrado de n >>\n");
+    float numero;
+    printf("Digite um numero:");
+    scanf("%f",&numero);
+    printf("O valor de %.2f ao quadrado e %.2f", numero, numero*numero);
 }
 
 /*

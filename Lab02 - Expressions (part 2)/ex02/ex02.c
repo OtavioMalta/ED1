@@ -2,6 +2,16 @@
 
 int main() {
     printf("<< Calculo da Media >>\n");
+    int n1,n2;
+    char inicial;
+    printf("<< Calculo da Media >>\n");
+    printf("Digite o nome do aluno: ");
+    scanf("%c",&inicial);
+    printf("Digite a nota da prova 1: ");
+    scanf("%d",&n1);
+    printf("Digite a nota da prova 2: ");
+    scanf("%d",&n2);
+    printf("A nota media do aluno %c eh %d\n",inicial , (n1+n2)/2);
 }
 
 /*

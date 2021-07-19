@@ -2,6 +2,16 @@
 
 int main() {
     printf("<< Pagamento encanador >>\n");
+    float dias;
+    printf("Digite o numero de dias trabalhados: ");
+    scanf("%f",&dias);
+    float bruto = dias*30;
+    float iss = bruto*4/100;
+    float ir = (bruto-iss)*8/100;
+    printf("Valor bruto R$: %.0f\n", bruto);
+    printf("Valor liquido R$: %.2f\n", bruto - iss - ir);
+    printf("ISS R$: %.0f\n", iss);
+    printf("IR R$: %.2f\n", ir);
 }
 
 /*
