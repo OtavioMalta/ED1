@@ -1,9 +1,27 @@
 #include <stdio.h>
 
 int main(){
+    int a,nota[a],soma=0;
+    float media;
     printf("<< Media de n alunos. Maximo 100 alunos >>\n");
-
-    return 0;
+    printf("Entre com um numero de alunos: ");
+    scanf("%d",&a);
+    if(a>100){
+        printf("[Erro!] O numero maximo de alunos permitido eh 100");
+    }else{
+        for(int i =1;i<=a;i++){
+        printf("Digite a nota do aluno %d: ",i);
+        scanf("%d",&nota[i]);
+        soma+=nota[i];
+        }
+        media=(float)soma/(float)a;
+        printf("Relatorio de Notas\n");
+        for (int k = 1; k <= a; k++)
+        {
+            printf("Nota do aluno %d: %d\n",k,nota[k]);
+        }
+        printf("Media da turma: %.1f",media);
+        return 0;}
 }
 
 /*

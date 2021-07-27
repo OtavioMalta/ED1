@@ -2,7 +2,23 @@
 
 int main(){
     printf("<< Subtracao de vetores >>\n");
-
+    int a[3],b[3],c[3];
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Digite o valor %d de A: ",i+1);
+        scanf("%d",&a[i]);
+    }
+    printf("\n");
+    for (int k = 0; k < 3; k++)
+    {
+        printf("Digite o valor %d de B: ",k+1);
+        scanf("%d",&b[k]);
+    }
+    for (int l = 0; l < 3; l++)
+    {
+        c[l]=a[l]-b[l];
+    }
+    printf("O vetor C, definido como C = A-B:  (%d, %d, %d)",c[0],c[1],c[2]);
     return 0;
 }
 

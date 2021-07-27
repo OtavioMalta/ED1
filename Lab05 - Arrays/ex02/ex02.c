@@ -1,8 +1,16 @@
 #include <stdio.h>
 
 int main(){
+    int num[6];
     printf("<< Listando um vetor - com loops >>\n");
-
+    for(int i = 0; i<6;i++){
+            printf("Entre com o numero %d: ",i+1);
+            scanf("%d",&num[i]);
+    }
+    printf("Valores lidos: ");
+    for(int i = 0; i <6; i++){
+        printf("%d ",num[i]);
+    }
     return 0;
 }
 

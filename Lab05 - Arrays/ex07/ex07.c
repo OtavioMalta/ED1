@@ -1,7 +1,23 @@
 #include <stdio.h>
 
 int main(){
+    float nota[5],max=0,p;
     printf("<< Normalizando as notas >>\n");
+    for(int i = 0; i < 5;i++){
+        printf("Entre com a nota do aluno %d: ",i+1);
+        scanf("%f",&nota[i]);
+        if(nota[i]>=max){
+            max=nota[i];
+        }  
+    }
+    p = max/100;
+    for(int k = 0; k < 5; k++){
+        if(nota[k]==max){
+            printf("A nota do aluno %d eh 100\n",k);
+        }else{
+            printf("A nota do aluno %d eh %.0f\n",k,nota[k]/p);
+        }
+    }
 
     return 0;
 }

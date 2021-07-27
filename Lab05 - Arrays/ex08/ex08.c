@@ -1,8 +1,20 @@
 #include <stdio.h>
-
+#include <math.h>
 int main(){
+    int num[5],soma=0;
+    float media,dp,res;
     printf("<< Media e desvio-padrao >>\n");
-
+    for(int i = 0; i < 5; i++){
+        printf("Digite o valor %d: ",i+1);
+        scanf("%d",&num[i]);
+        soma+=num[i];
+    }
+    media = soma/5; 
+    for(int k =0;k<5;k++){
+        dp+=pow(num[k]-media,2);
+    }
+    res=sqrt(dp/4.0);
+    printf("A media eh %.0f e o desvio-padrao eh %.2f",media,res);
     return 0;
 }
 

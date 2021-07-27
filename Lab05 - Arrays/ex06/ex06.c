@@ -2,7 +2,31 @@
 
 int main(){
     printf("<< Five Values with index >>\n");
-
+    int num[5],min,max,imin,imax;
+    float soma=0;
+    printf("<< Five Values >>\n");
+    for(int i = 0; i < 5;i++){
+        printf("Input #%d: ",i+1);
+        scanf("%d",&num[i]);
+    }
+    min=num[0];
+    max=num[0];
+    printf("The numbers entered are: ");
+    for(int p = 0; p < 5; p++){
+        printf("%d ",num[p]);
+        soma+=num[p];
+        if(num[p]<=min){
+            min=num[p];
+            imin=p;
+        }
+        if(num[p]>=max){
+            max=num[p];
+            imax=p;
+        }   
+    }
+    printf("\nMax. Value: %d, index %d of the array\n",max,imax);
+    printf("Min. Value: %d, index %d of the array\n",min,imin);
+    printf("Mean: %.1f", soma/5.0);
     return 0;
 }
 

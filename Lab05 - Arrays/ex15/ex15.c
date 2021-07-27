@@ -1,8 +1,21 @@
 #include <stdio.h>
 
-int main(){
-    printf("<< Valores iguais >>\n");
-
+int main() {
+    int vetor[8];     
+    for(int i=0; i < 8; i++){
+        printf("Entre com o numero %i: ",i+1);
+        scanf("%i",&vetor[i]);
+    }    
+    printf("Valores repetidos: ");    
+    for(int j = 0; j < 8 ; j++) {    
+        for(int k = j + 1; k < 8; k++) {    
+            if(vetor[j] == vetor[k] && vetor[j]!=NULL){  
+                printf("%d ", vetor[k]);
+                vetor[k]=NULL;
+                vetor[j]=NULL;
+                }
+        }    
+    }   
     return 0;
 }
 

@@ -1,12 +1,11 @@
 #include <stdio.h>
 int main(){
-    int p,i=0;
+    int p;
     printf("<< Contagem progressiva ate 0>>\n");
     printf("Qual eh o numero inicial?");
     scanf("%d",&p);
-    while(i>=p){
+    for(int i = 0; i>=p;p++){
         printf("%d..",p);
-        p++;
     }
     printf("FIM!");
 }

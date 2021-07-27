@@ -1,15 +1,29 @@
+//INCOMPLETO!!!
 #include <stdio.h>
 
-int main(){
-    printf("<< Valores iguais >>\n");
-
+int main() {
+    int vetor[8],c[8];     
+    for(int i=0; i < 8; i++){
+        printf("Entre com o numero %i: ",i+1);
+        scanf("%i",&vetor[i]);
+    }    
+    printf("Valores repetidos: ");    
+    for(int j = 0; j < 8 ; j++) {    
+        for(int k = j + 1; k < 8; k++) {  
+            if(vetor[j] == vetor[k] && vetor[j]!=NULL){  
+                printf("%d ", vetor[k]);
+                vetor[k]=NULL;
+                vetor[j]=NULL;
+                }
+        }
+    }   
     return 0;
 }
 
 /*
 
-Faça um programa que leia um vetor de 8 posições e verifique se existem 
-valores iguais e os escreva a quantidade de vezes que eles aparecem na lista
+    Faça um programa que leia um vetor de 8 posições e verifique se existem 
+    valores iguais e os escreva a quantidade de vezes que eles aparecem na lista
 
 Exemplo de saída:
 << Valores iguais >>

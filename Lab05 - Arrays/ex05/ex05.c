@@ -1,8 +1,29 @@
 #include <stdio.h>
 
 int main(){
+    int num[5],min,max;
+    float soma=0;
     printf("<< Five Values >>\n");
-
+    for(int i = 0; i < 5;i++){
+        printf("Input #%d: ",i+1);
+        scanf("%d",&num[i]);
+    }
+    min=num[0];
+    max=num[0];
+    printf("The numbers entered are: ");
+    for(int p = 0; p < 5; p++){
+        printf("%d ",num[p]);
+        soma+=num[p];
+        if(num[p]<=min){
+            min=num[p];
+        }
+        if(num[p]>=max){
+        max=num[p];
+        }   
+    }
+    printf("\nMax. Value: %d\n",max);
+    printf("Min. Value: %d\n",min);
+    printf("Mean: %.1f", soma/5.0);
     return 0;
 }
 
