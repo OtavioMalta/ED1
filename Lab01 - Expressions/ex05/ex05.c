@@ -9,8 +9,11 @@ int main() {
 }
 
 /*
-=> Ler quatro notas e mostrar as notas e a média aritmética obtida.
-
+=> 5)	Receber o salário de um funcionário, calcular e mostrar seu novo 
+salário, sabendo que ele recebeu um aumento de 25%. 
+OBS: para mostrar o sinal de % no printf use dois símbolos de %. 
+Exemplo: printf(“Após 25%% de ...”). Se você utilizar somente um % o 
+compilador interpretará como um especificador de formato)
 -------------------------------------------------------------------------------
 Exemplo de saída:
 
