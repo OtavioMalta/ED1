@@ -20,11 +20,26 @@ int main(){
             maior=valor[i];
         }
     }
-    printf("Probablidade\n");
-    printf("Verde: %.1f %%", valor[0]);
-    printf("Azul: %.1f %%",valor[1]);
-    printf("Amarelo: %.1f %%",valor[2]);
-    printf("Vermelho: %.1f %%",valor[3]);
+
+    printf("\nProbablidade\n");
+    if(valor[0]==maior){
+        printf("Verde: %.1f %% << Maior probabilidade\n", valor[0]);
+    }else{
+        printf("Verde: %.1f %%\n", valor[0]);
+    }
+    if(valor[1]==maior){
+        printf("Azul: %.1f %% << Maior probabilidade\n", valor[1]);
+    }else{
+        printf("Azul: %.1f %%\n", valor[1]);
+    }if(valor[2]==maior){
+        printf("Amarelo: %.1f %% << Maior probabilidade\n", valor[2]);
+    }else{
+        printf("Amarelo: %.1f %%\n", valor[2]);
+    }if(valor[3]==maior){
+        printf("Vermelho: %.1f %% << Maior probabilidade\n", valor[3]);
+    }else{
+        printf("Vermelho: %.1f %% \n", valor[3]);
+    }
     return 0;
 }
 

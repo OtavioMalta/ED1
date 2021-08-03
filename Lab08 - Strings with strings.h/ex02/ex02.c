@@ -7,7 +7,10 @@ int main(){
     printf("<<Vetor de char>>\n");
     printf("Digite um nome: ");
     gets(nome);
-    printf("%s",nome);
+    for(int i = 0; i <strlen(nome); i++){
+        nome[i] = toupper(nome[i]);
+    }
+    printf("%s", nome);
     return 0;
 }
 
