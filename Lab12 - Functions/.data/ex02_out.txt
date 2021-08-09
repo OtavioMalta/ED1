@@ -1,0 +1,5 @@
+Digite a quantidade de linhas a serem impressas: 3
+Digite o tamanho da linha: 5
+=====
+=====
+=====
