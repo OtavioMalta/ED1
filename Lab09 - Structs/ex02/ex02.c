@@ -1,7 +1,26 @@
 #include <stdio.h>
 
+struct data{
+    int dia;
+    char mes[12];
+    int ano;
+};
+
 int main(){
-    printf("<<  >>\n");
+    printf("<< Data >>\n");
+    struct data data[4];
+    for(int i = 1; i <=3; i++){
+        printf("\nDigite o dia: ");
+        scanf("%d", &data[i].dia);
+        printf("Digite o mes: ");
+        scanf("%s", &data[i].mes);
+        printf("Digite o ano: ");
+        scanf("%d", &data[i].ano);
+    }
+    printf("\nDatas cadastradas:");
+    for(int p = 1; p <= 3; p++){
+        printf("\nDia %d de %s de %d\n",data[p].dia,data[p].mes,data[p].ano);
+    }
 
     return 0;
 }

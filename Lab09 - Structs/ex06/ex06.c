@@ -1,8 +1,39 @@
 #include <stdio.h>
+struct elet{
+  char nome[15];
+  int pot;
+  int tempo;
+  int total;
+};
 
 int main(){
-    printf("<<  >>\n");
+    int dias,total = 0;
+    struct elet eletro[5];
+    printf("<< Eletrodomesticos >>\n");
+    for(int i = 0; i<5; i++){
+      printf("\nInforme os dados do %d elereodomestico: \n",i);
+      printf("Nome: ");
+      scanf("%s",&eletro[i].nome);
+      printf("Potencia: ");
+      scanf("%d", &eletro[i].pot);
+      printf("Tempo ativo por dia: ");
+      scanf("%d", &eletro[i].tempo);
+      }
+    
+    printf("Informe um valor de tempo(em dia): ");
+    scanf("%d",&dias);
+    for(int p = 0; p <5; p++){
+      eletro[p].total = eletro[p].pot * eletro[p].tempo * dias;
+      total += eletro[p].total;
+    }
+    printf("Consumo total: %d KW\n",total);
 
+    printf("Consumo Relativo: \n");
+    
+    for(int t = 0; t < 5; t++){
+      printf("%s: %.1f %%\n", eletro[t].nome, eletro[t].total*100.0/total);
+    }
+    printf("-------------------------------------------------------------------------------");
     return 0;
 }
 
