@@ -1,0 +1,14 @@
+Entre com o tamanho do vetor: Entre com o elemento 1: Entre com o elemento 2: Entre com o elemento 3: Entre com o elemento 4: 
+Vetor: 369123, -698122, 2541, 12
+Maior: 369123   Menor: -698122
+Numero de negativos: 1
+Vetor absoluto: 369123, 698122, 2541, 12
+
+Copiando para outro vetor (alocado dinamicamente)
+
+Vetor original: 369123, -698122, 2541, 12
+Vetor copiado: 369123, -698122, 2541, 12
+
+Entre com o valor escalar para multiplicar o vetor original: 
+Vetor original: 1130264152, 193350192, -1207569368, 800554336
+Vetor copiado: 369123, -698122, 2541, 12

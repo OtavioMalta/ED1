@@ -1,0 +1,6 @@
+=> Faça uma função para calcular o fatorial de um número. Use essa 
+função para calcular o fatorial de um número que o usuário digitar. 
+Colocar todas as funções E/S (entrada e saída) no programa 
+principal (use também a função DesenhaLinha definida em outros 
+exercícios - essa função poderá conter comandos de saída
+fora do programa principal).

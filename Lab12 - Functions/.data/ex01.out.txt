@@ -1,0 +1,288 @@
+Exemplo de Saida:
+
+Digite a quantidade de linhas a serem impressas: 2
+========
+========
+
+2)	Altere o exercicio anterior para que o procedimento aceite um 
+argumento de quantos sinais de igual serao mostrados. Ex: 
+DesenhaLinha(4) tem como saida ====; DesenhaLinha(10) tem 
+como saida ==========. No programa principal, solicite ao usuario 
+quantas vezes a funcao devera ser executada e qual o tamanho da 
+linha a ser desenhada.
+     Exemplo de Saida:
+Digite a quantidade de linhas a serem impressas: 3
+Digite o tamanho da linha: 5
+=====
+=====
+=====
+
+3)	Faca uma funcao para calcular o fatorial de um numero. Use essa 
+funcao para calcular o fatorial de um numero que o usuario digitar. 
+Colocar todas as funcoes E/S (entrada e saida) no programa 
+principal (use tambem a funcao DesenhaLinha - esta pode conter 
+comandos de saida fora do programa principal).
+     Exemplo de Saida:
+Digite o tamanho da linha: 20
+Digite o numero que deseja calcular o fatorial: 4
+
+====================
+O fatorial de 4 e 24
+====================
+
+4)	Faca uma funcao para calcular xn. Nao utilizar o operador pow (nem 
+^ - que nao existe em C). No programa principal permita ao usuario 
+informar o valor de x e de n (inteiro). Lembre que n pode assumir 
+valor negativo.
+     Exemplo de Saida:
+Digite o valor de x: 5
+Digite o valor de n: 2
+O valor de 5 elevado a 2 e 25
+ 
+5)	Faca uma funcao para verificar se um numero e um quadrado 
+perfeito (retorne Verdadeiro caso seja). 
+     Exemplo de Saida:
+Digite o valor de n: 25
+O numero 25 e um quadrado perfeito.
+
+Exemplo de Saida:
+Digite o valor de n: 15
+O numero 15 nao e um quadrado perfeito.
+
+6)	Faca uma funcao para calcular o numero neperiano usando uma 
+serie (ver abaixo). A funcao deve ter como parametro o numero de 
+termos que serao somados (note que, quanto maior o numero, a 
+resposta estara mais proxima do valor e). Observe que e preciso 
+calcular o fatorial de varios numeros - para isso, utilize a funcao 
+criada anteriormente. Utilize tambem o procedimento criado no 
+exercicio 2.
+
+ 
+(fonte: Wikipedia)
+ 
+Exemplo de Saida:
+Digite o valor de n para aproximar o numero neperiano: 4
+O valor do numero neperiano e: 2.66666666666667
+
+
+7)	Faca um procedimento "Troque", que recebe duas variaveis reais A 
+e B e troca o valor delas (i.e., A recebe o valor de B e B recebe o 
+valor de A). Mostre no programa principal o resultado da troca
+     Exemplo de Saida:
+Digite o numero A: 4
+Digite o numero B: 6
+O numero A e: 6
+O numero B e: 4
+
+8)	Faca uma funcao que altere um valor de um numero real em x%. Se 
+o valor de x for negativo ele deve ser decrementado, se for positivo 
+aumente.
+
+Uso da funcao: 
+x = incp(y,10);
+z = incp(y,-20);
+
+Exemplo de Saida:
+Digite o valor de y: 100
+Digite o percentual de alteracao: 0.10 // 0.10 equivale a 10%
+O valor alterado e: 110
+
+9)	Crie um procedimento identico ao exercicio anterior, mas que mude 
+o valor da variavel passada por parametro (ou seja, o retorno deve 
+ser void)
+Exemplo de Saida:
+Digite o valor de y: 100
+Digite o percentual de alteracao: 0.10 // 0.10 equivale a 10%
+O valor alterado e: 110
+
+Para os proximos exercicios crie uma struct chamada ponto, que 
+armazena dois numeros reais que representam coordenadas 
+cartesianas.
+
+10)	Faca uma funcao chamada imprime_ponto, que recebe uma 
+struct do tipo ponto e mostra na tela o ponto no seguinte formato 
+(ponto.x, ponto.y)
+
+Exemplo de chamada da funcao:
+imprime_ponto(p)
+
+Exemplo de Saida:
+Digite o valor de x: 10
+Digite o valor de y: 5
+O ponto digitado e: (10,5)
+
+11)	Faca uma funcao que some dois pontos e retorne o resultado 
+da soma. Mostre os 3 pontos usando a funcao imprime_ponto.
+
+ponto p1, p2, p3;
+p3= soma_ponto(p1,p2);
+
+Exemplo de saida:
+Digite o valor de x1: 1
+Digite o valor de y1: 2
+Digite o valor de x2: 3
+Digite o valor de y2: 4
+A soma de (1,2) com (3,4) e (4,6)
+
+12)	Crie um procedimento identico ao exercicio anterior, mas que 
+agora retorne void e coloque o resultado da soma no terceiro 
+argumento da funcao.
+
+Exemplo de saida:
+Digite o valor de x1: 1
+Digite o valor de y1: 2
+Digite o valor de x2: 3
+Digite o valor de y2: 4
+A soma de (1,2) com (3,4) e (4,6)
+
+13)	Faca uma funcao que calcule a area do retangulo definido por 
+dois pontos. 
+Cabecalho: area = calc_area(p1,p2)
+Exemplo de saida:
+A area do retangulo definido por (1,4) e (4,2) e 6
+14)	Faca um procedimento que multiplique o valor de um ponto 
+por uma constante e altere o valor do ponto. Deve ser usada 
+passagem por referencia e retorno void
+
+Exemplo de saida:
+Digite o ponto: 1,2
+Digite a constante: 5
+Resultado: (1,2) * 5 = (5,10)
+
+
+15)	Faca um procedimento chamado inc_dir, que faz o ponto 
+andar uma unidade para leste, oeste, norte, sul (passar como 
+referencia e retorno void)
+
+Exemplo de chamada:
+inc_dir(p,'l'); // anda uma unidade para o leste (incrementa x)
+inc_dir(p,'o'); // anda uma unidade para o oeste (decrementa x)
+
+Exemplo de saida:
+(1,3) norte => (1,4)
+(2,4) leste => (3,4)
+
+16)	Crie um procedimento para andar na diagonal (sudeste, 
+sudoeste, nordeste, noroeste). Use obrigatoriamente as funcoes do 
+exercicio anterior.
+
+ind_diag(p,"sudeste"); 
+ind_diag(p,"sudoeste");
+
+Exemplo de saida:
+(1,3) sudeste => (2,2)
+(2,4) sudoeste => (1,3)
+
+17)	Crie tres funcoes chamadas imprime_vet_int, 
+imprime_vet_double, imprime_vet_float que mostra o conteudo de 
+um vetor de inteiros, double, e float, respectivamente. Use essas 
+funcoes sempre que precisar mostrar um vetor.
+Exemplo de Chamada:
+imprime_vet_int(vetori,n);
+imprime_vet_double(vetord,n);
+imprime_vet_float(vetorf,n);
+
+18)	Crie um procedimento que recebe um vetor de double como 
+entrada e devolve o maior e o menor elemento do vetor. Mostre no 
+programa principal o vetor, o maior e o menor elemento
+
+19)	 Implemente uma funcao que receba como parametro um 
+vetor de n numeros reais (VET) de tamanho N e retorne quantos 
+numeros negativos ha a nesse vetor. Use o seguinte prototipo
+
+int negativos(float *vet, int N); 
+
+
+20)	Faca uma funcao para copiar um vetor inteiro para outro 
+vetor. Ambos vetores devem ter o mesmo tamanho. Mostre no 
+programa principal os dois vetores.
+
+Chamada:
+copiarvet(vet_origem, vet_destino, n)
+
+
+21)	Faca uma funcao para multiplicar um vetor por um escalar 
+(um numero). Mostre, no programa principal, o vetor antes e depois 
+da multiplicacao.
+multvet(vetor, n, escalar)
+22)	Faca uma funcao para transformar os numeros de um vetor 
+de inteiros em seu valor absoluto (use a funcao abs (math.h))
+
+abs_vet(vet) 
+======= Alocacao dinamica  com funcoes =============
+23)	Use as funcoes criadas nos exercicios anteriores em um unico 
+programa, mas agora trabalhe com vetores alocados 
+dinamicamente no programa principal. Lembre de liberar a 
+memoria depois de usar os vetores.
+Exemplo de saida:
+Entre com o tamanho do vetor: 4
+Entre com o elemento 1: 50
+Entre com o elemento 2: 20
+Entre com o elemento 3: 10
+Entre com o elemento 4: -30
+
+Vetor: 50; 20; 10; -30
+Maior: 50  Menor: -30
+Numero de negativos: 1
+Vetor absoluto: 50; 20; 10; 30
+Copiando para outro vetor (alocado dinamicamente)
+Vetor original: 50; 20; 10; -30
+Vetor copiado: 50; 20; 10; -30
+
+Entre com o valor escalar para multiplicar o vetor original: 10
+Vetor original: 500; 200; 100; -300
+Vetor copiado: 50; 20; 10; -30
+
+
+24)	Alocacao dinamica em funcoes: sabemos que as variaveis 
+locais de uma funcao (e tambem seus parametros) sao alocadas na 
+memoria no momento da execucao da funcao. Ao termino da 
+funcao, essas variaveis sao destruidas da memoria. Entretanto, 
+quando fazemos uma alocacao dinamica dentro de uma funcao, o 
+vetor alocado permanece na memoria, mesmo apos o termino da 
+funcao.
+
+Crie uma funcao aloca_inteiro, que faz a alocacao de um vetor 
+inteiro de tamanho n e que inicialize os elementos desse vetor com 
+o valor zero. Retorne o ponteiro para o vetor alocado. Imprima no 
+programa principal o vetor alocado.
+
+Prototipo
+int *aloca_inteiro(int n);
+
+Chamada
+int *p
+p = aloca_inteiro(10);
+imprime_vet(p,n)
+
+
+25)	Faca uma funcao que copia um vetor de double para um 
+outro vetor. Esse outro vetor e alocado dentro da funcao que faz a 
+copia. Mostre os dois vetores.
+
+Chamada:
+vet_destino  = copiarvet(vet_origem,  n)
+
+26)	Faca a funcao to_double, que recebe um vetor de inteiro e 
+retorna um vetor com o mesmo conteudo, mas convertido para 
+double
+Chamada
+vet_double = to_double(vet_int,n)
+
+27)	Crie uma funcao para alocar dinamicamente um vetor de n 
+pontos e inicialize esses pontos como (0,0).
+
+28)	Tente fazer uma funcao que copia um vetor de double para 
+um outro vetor. Esse outro vetor e alocado dentro da funcao que 
+faz a copia.  Mostre vet_destino no programa principal
+
+Chamada:
+copiarvet(vet_origem, vet_destino, n)
+
+Explique porque a funcao nao funciona. Faca o mapa de memoria 
+(antes, durante, e depois da chamada da funcao). Qual seria a 
+solucao para uma funcao deste tipo?
+
+
+
+
