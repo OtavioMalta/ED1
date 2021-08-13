@@ -2,7 +2,13 @@
 
 int main(){
     printf("<< Pointers >>\n");
+    int val[5] = {2,4,5,8,10};
+    unsigned long int e;
+    e = &val[2];
 
+    printf("Digite o novo valor para val[2]: ");
+    scanf("%d", e);
+    printf("%d", val[2]);
     return 0;
 }
 
