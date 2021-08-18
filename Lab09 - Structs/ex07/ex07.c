@@ -1,6 +1,5 @@
-//Nao consegui utilizar fgets para aceitar espaços em uma string
-
 #include <stdio.h>
+#include <string.h>
 struct elet{
   char nome[15];
   int pot;
@@ -15,11 +14,13 @@ int main(){
     for(int i = 0; i<5; i++){
       printf("\nInforme os dados do %d elereodomestico: \n",i+1);
       printf("Nome: ");
-      scanf("%s",&eletro[i].nome);
+      gets(eletro[i].nome);
       printf("Potencia: ");
       scanf("%d", &eletro[i].pot);
       printf("Tempo ativo por dia: ");
       scanf("%d", &eletro[i].tempo);
+      fflush(stdin);
+
       }
     
     printf("Informe um valor de tempo(em dia): ");
