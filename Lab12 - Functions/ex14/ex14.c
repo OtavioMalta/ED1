@@ -1,10 +1,34 @@
+//Nao consegui ler o ponto neste fortmato (x,y)
 #include <stdio.h>
+#include <string.h>
+
+struct ponto{
+    int x,y;
+};
+
+void multPonto(struct ponto *p, int c){
+    p->x *= c;
+    p->y *= c;
+}
 
 int main(){
-    printf("Digite o ponto: ");
+    struct ponto pto;
+    struct ponto *p;
+    p = &pto;
+    int c;
+    printf("Digite o ponto: \n");
+    printf("X: ");
+    scanf("%d", &pto.x); 
+    printf("Y: ");
+    scanf("%d", &pto.y);
+    
     printf("Digite a constante: ");
-
-    return 0;
+    scanf("%d", &c);
+    
+    printf("Resultado: (%d, %d) * %d = ", pto.x,pto.y,c);
+    multPonto(p,c);
+    printf("(%d,%d)", p->x,p->y);
+    return 0;   
 }
 
 /*

@@ -1,4 +1,4 @@
-//Tentei de tudo pra colocar o fgets ou até mesmo o gets, mas por algum motivo alguns imputs são pulados mesmo usado o fflush
+//Tentei de tudo pra colocar o fgets, mas por algum motivo alguns imputs são pulados mesmo usado o fflush
 
 #include <stdio.h>
 #include <string.h>

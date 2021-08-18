@@ -1,7 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int negativos(float *vet, int n){
+    int res =0;
+    for(int i = 0; i<n; i++){
+        if(vet[i]<0){
+            res++;
+        }
+    }
+    return res;
+}
+
+void imprime_vet_float(float *vetorf, int n){
+    for(int i = 0; i < n;i++){
+        printf("%.2f ",vetorf[i]);
+    }
+}
 
 int main(){
-    printf("<<  >>\n");
+    int n,res;
+    float *vet;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d",&n);
+    vet = (float *)malloc(n*sizeof(float));
+    for(int i =0; i<n; i++){
+        printf("Digite o valor %d: ",i+1);
+        scanf("%f",&vet[i]);
+    }
+    res = negativos(vet, n);
+
+    printf("O vetor principal eh: ");
+    imprime_vet_float(vet,n);
+    printf("\nO vetor tem %d numero(s) negativo(s)",res);
+    free(vet);
 
     return 0;
 }

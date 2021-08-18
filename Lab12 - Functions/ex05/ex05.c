@@ -1,8 +1,26 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o valor de n: ");
+int QuadradoPerfeito(int n){
+    int soma = 0, x = 0;
+    
+    for(int i = 1;soma<n;i+=2){
+        soma+=i;
+        if(soma==n){
+            x = 1;
+        }
+    }
+    return x;
+}
 
+int main(){
+    int n;
+    printf("Digite o valor de n: ");
+    scanf("%d", &n);
+    if(QuadradoPerfeito(n)){
+        printf("O numero %d eh um quadrado perfeito", n);
+    }else{
+        printf("O numero %d nao eh um quadrado perfeito", n);
+    }
     return 0;
 }
 

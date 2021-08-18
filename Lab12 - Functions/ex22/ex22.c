@@ -1,8 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
+void imprime_vet_int(int *vetori, int n){
+    for(int i = 0; i < n;i++){
+        printf("%d ",vetori[i]);
+    }
+    printf("\n");
+}
+void abs_vet(int *vet){
+    for(int i = 0; i < sizeof(vet); i++){
+        vet[i] = abs(vet[i]);
+    }
+}
 int main(){
-    printf("<<  >>\n");
+    int n, *vet;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &n);
+    vet = (int*)malloc(n*sizeof(int));
 
+    for(int i = 0; i<n; i++){
+        printf("Digite o valor %d: ", i+1);
+        scanf("%d",&vet[i]);
+    }
+    printf("O vetor de origem eh: ");
+    imprime_vet_int(vet,n);
+
+    abs_vet(vet);
+    printf("O vetor com valores absolutos eh: ");
+    imprime_vet_int(vet,n);
+    free(vet);
     return 0;
 }
 

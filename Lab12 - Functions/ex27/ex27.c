@@ -1,8 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+struct ponto{
+    int x,y;
+};
 
+void alocarPonto(int n){
+    struct ponto *p;
+    p = (struct ponto *)calloc(n, sizeof(struct ponto));
+}
 int main(){
+    int n;
+    struct ponto *p;
     printf("Digite quantos pontos(x,y) você deseja: ");
-
+    scanf("%d",&n);
+    for(int i =0; i<n; i++){
+        printf("(%d,%d) ",p[i].x,p[i].y);
+    }
+    free(p);
     return 0;
 }
 

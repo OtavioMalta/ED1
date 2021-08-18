@@ -1,11 +1,71 @@
 #include <stdio.h>
+#include <stdlib.h>
 //lembre-se de incluir as bibliotecas adequadas
+struct pontos{
+    int x;
+    int y;
+};
 
 int main(){
-    printf("<< Vetor de pontos alocados dinamicamente >>");
+    int n;
+    struct pontos *p;
+    struct pontos *c;
+    struct pontos *b;
+    struct pontos *e;
+    struct pontos *d;
 
+    printf("<< Vetor de pontos alocados dinamicamente >>\n");
+    printf("Quantos pontos deseja digitar: ");
+    scanf("%d", &n);
+
+    p = (int*)malloc(n*sizeof(struct pontos));
+    c = (int*)malloc(sizeof(struct pontos));
+    b = (int*)malloc(sizeof(struct pontos));
+    e = (int*)malloc(sizeof(struct pontos));
+    d = (int*)malloc(sizeof(struct pontos));
+
+
+    for(int i = 0; i < n; i++){
+        printf("\nEntre com a coordenada x do ponto %d: ",i+1);
+        scanf("%d", &p[i].x);
+        printf("Entre com a coordenada y do ponto %d: ",i+1);
+        scanf("%d", &p[i].y);
+
+        if(p[i].x > d->x || i ==0){
+            d->x = p[i].x;
+            d->y = p[i].y;
+        }
+        if(p[i].x < e->x || i ==0){
+            e->x = p[i].x;
+            e->y = p[i].y;
+        }
+        if(p[i].y > c->y || i ==0){
+            c->x = p[i].x;
+            c->y = p[i].y;
+        }
+        if(p[i].y < b->y || i ==0){
+            b->x = p[i].x;
+            b->y = p[i].y;
+        }
+    }
+
+    printf("Pontos digitados: ");
+    for(int t = 0; t < n; t++){
+        printf("(%d,%d); ",p[t].x,p[t].y);
+    }
+
+    printf("\n\nPonto mais a esquerda: (%d,%d)",e->x,e->y);
+    printf("\nPonto mais a direita: (%d,%d)",d->x,d->y);
+    printf("\nPonto mais acima: (%d,%d)",c->x,c->y);
+    printf("\nPonto mais abaixo: (%d,%d)",b->x,b->y);
+    free(p);
+    free(c);
+    free(b);
+    free(e);
+    free(d);
     return 0;
 }
+
 
 /*
 5) Modifique o programa anterior incluindo quatro ponteiros, que apontarão para

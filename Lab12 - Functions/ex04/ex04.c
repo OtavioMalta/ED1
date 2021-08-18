@@ -1,9 +1,24 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o valor de x: ");
-    printf("Digite o valor de n: ");
+long long int potencia(int x, int n){
+    long long int res = 1;
+    for(int i = 1; i <= n; i++){
+        res*=x;
+    }
+    return res;
+}
 
+int main(){
+    int x, n;
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+    printf("Digite o valor de n: ");
+    scanf("%d", &n);
+    if(n<0){
+        printf("[ERRO] O valor de (n) nao pode ser negativo!");
+    }
+    long long int res = potencia(x,n);
+    printf("\nO valor de %d elevado a %d eh %lld\n", x,n,res);
     return 0;
 }
 

@@ -1,9 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 //lembre-se de incluir as bibliotecas adequadas
 
 int main(){
+    int n,par=0,impar=0;
+    int *num;
     printf("<< Par ou Impar >>\n");
+    printf("Quantos inteiros serao lidos: ");
+    scanf("%d", &n);
+    num = (int *)malloc(n*sizeof(int));
 
+    for(int i = 0; i < n; i++){
+        printf("%d inteiro: ",i+1);
+        scanf("%d", &num[i]);
+        if(num[i]%2==0){
+            par++;
+        }else{
+            impar++;
+        }
+    }
+
+    printf("\nSao pares %d dos %d inteiros.\n",par,n);
+    printf("Sao impares %d dos %d inteiros.\n",impar,n);
+    free(num);
     return 0;
 }
 

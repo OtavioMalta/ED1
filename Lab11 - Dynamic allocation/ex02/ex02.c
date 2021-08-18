@@ -1,9 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 //lembre-se de incluir as bibliotecas adequadas
 
 int main() {
     printf("<< Guarda inteiros >>\n");
-    // Insira o seu código aqui.
+    int *a;
+
+    //(a)
+    a = (int *)malloc(5*sizeof(int));
+
+    //(b)
+    for(int i; i<5; i++){
+        printf("Digite o numero(%d): ", i+1);
+        scanf("%d", &a[i]);
+    }
+
+    //(c)
+    for(int p = 0; p < 5; p++){
+        printf("\nO numero(%d) eh %d",p+1,a[p]);
+    }
+
+    free(a);
 }
 
 /*

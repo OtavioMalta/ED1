@@ -1,3 +1,5 @@
+//Nao consegui utilizar fgets para aceitar espaços em uma string
+
 #include <stdio.h>
 struct elet{
   char nome[15];

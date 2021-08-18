@@ -1,9 +1,26 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o valor de y: ");
-    printf("Digite o percentual de alteração x: ");
+//Acho que alguns exemplos que foram passados com os exercício 08 e 09 estão errados
 
+int incp(int y, float p){
+    int res;    
+    res = y + y*p;
+    
+    return res;
+}
+
+int main(){
+    int res, y;
+    float p;
+
+    printf("Digite o valor de y: ");
+    scanf("%d", &y);
+    printf("Digite o percentual de alteração x: ");
+    scanf("%f", &p);
+
+    res = incp(y,p);
+
+    printf("O valor alterado eh: %d", res);
     return 0;
 }
 

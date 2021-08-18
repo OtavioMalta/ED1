@@ -1,8 +1,24 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+int *aloca_inteiro(int n){
+    int *vet;
+    vet = (int*)calloc(n,sizeof(int));
+    return vet;
+}
+void imprime_vet(int *vetori, int n){
+    for(int i = 0; i < n;i++){
+        printf("%d ",vetori[i]);
+    }
+    printf("\n");
+}
 int main(){
+    int n, *vet;
     printf("Digite o tamanho do vetor: ");
-
+    scanf("%d", &n);
+    vet = aloca_inteiro(n);
+    printf("O vetor eh: ");
+    imprime_vet(vet,n);
+    free(vet);
     return 0;
 }
 

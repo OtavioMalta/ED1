@@ -1,8 +1,30 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+double *copiarvet(double *vet_origem,double *vet_destino, int n){
+    vet_destino = (double *)malloc(n*sizeof(double));
+    for(int i = 0; i < n;i++){
+        vet_destino[i] = vet_origem[i];}
+    return vet_destino;
+}
+void imprime_vetd(double *vetord, int n){
+    for(int i = 0; i < n;i++){
+        printf("%.2lf ",vetord[i]);
+    }
+    printf("\n");
+}
 int main(){
-    printf("<<  >>\n");
-
+    double *origem;
+    double *destino;
+    int n;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &n);
+    for(int i =0; i<n; i++){
+        printf("Digite o valor %d: ",i+1);
+        scanf("%lf",&origem[i]);
+    }
+    destino = copiarvet(origem,destino,n);
+    imprime_vetd(destino,n);
+    free(destino);
     return 0;
 }
 

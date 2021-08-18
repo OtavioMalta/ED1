@@ -1,14 +1,17 @@
 #include <stdio.h>
 int main(){
     int n;
-    long long int nep, f, p=1;
-    printf("<<Numero neperiano>>");
+    double nep = 1.0;
+    printf("<<Numero neperiano>>\n");
     printf("Digite um numero: ");
     scanf("%d",&n);
-    for(int i = 0; i <=n; i++){
-        f=i*p;
-        p=f;
-        nep+=f;
+
+    unsigned long long int fat = 1;
+    for(int i = 1; i <= n; i++){
+        fat *= i;
+        nep+=1.0/fat;
+
     }
-    printf("%lld",nep);
+
+    printf("\nNeperiano = %.15lf",nep);
 }
