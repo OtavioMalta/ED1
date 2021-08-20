@@ -53,5 +53,6 @@ int main(){
         }
         printf("Ano: %d\n", l[j].ano);
     }
+    free(l);
     return 0;
 }
