@@ -34,6 +34,7 @@ int main(){
     //  - ler do teclado as informações dos livros
     printf("Informe quantos livros deseja cadastrar: ");
     scanf("%d", &n);
+    l = malloc(n*sizeof(struct livros));
     fflush(stdin);
 
     for(int i = 0; i<n; i++){
@@ -64,7 +65,7 @@ int main(){
     printf("Preco: %.2f\n", l[a].preco);
     printf("Usado: Sim\n");
     printf("Ano: %d\n", l[a].ano);
-
+    free(l);
   
     return 0;
 }

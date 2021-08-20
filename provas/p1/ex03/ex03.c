@@ -65,6 +65,8 @@ int main(){
     }else if( r == 4 ){
         printf("Lucro Alto!");
     }
+    // Não consegui retornar a porcentagem do lucro
+
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
