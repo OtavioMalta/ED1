@@ -1,0 +1,19 @@
+- Criar um exemplo de um TAD (ainda incompleto) nos mesmos moldes 
+do TADProduto discutido em aula (disponível na pasta 'samples\TADProduto)
+no github.
+
+- Use o exemplo 07 como guia para desenvolver este exercício
+
+- Escolha um TAD que use uma estrutura que tenha no mínimo 3 elementos
+  Ex:
+    Alunos (nome, matricula, cra)
+    Agencia bancaria (num.conta, saldo, nome do titular)
+    Jogos (nome do jogo, idade mínima, fabricante)
+    ....
+- Criei uma função específica para tralhar com os dados que estão no TAD
+  Ex:
+    Matricular novo Alunos
+    Alterar os saldo
+    Criar novo jogo
+- Gerar um arquivo com o main() que usa o TAD
+- Gerar o .c e .h do TAD
