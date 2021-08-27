@@ -1,0 +1,14 @@
+Altere o Exercício 1 para que os dados da struct do TAD fiquem protegidos
+
+
+Não é necessário o uso de vetores. 
+Pode criar somente um objeto (como foi feito em aula, somente um produto)
+
+Crie funções para
+-> criar o TAD
+-> destruir o TAD
+-> copiar todos os valores do objeto para variáveis no programa principal
+-> modificar um dos valores do objeto (essa função provavelmente será 
+   a mesma do exercício 1)
+
+
