@@ -13,7 +13,9 @@ int main()
   scanf("%f", &preco_ant);
   scanf("%d", &qtd);
 
+ 
   produto *p;
+  
   p = cria_produto(nome,preco_ant,qtd);
 
 
@@ -23,8 +25,7 @@ int main()
 
   imprime_produto(p);
   printf("\n\npreco antes: %f, preco depois: %f", preco_ant, preco_at);
-  free(p);
-  //destroi_produto(p);
+  destroi_produto(p);
 
   //   (*p).nome
   //    printf("\nProduto: %s\nPreco: %f\nEstoque: %d", p->nome,p->preco,p->qtd_estoque);
