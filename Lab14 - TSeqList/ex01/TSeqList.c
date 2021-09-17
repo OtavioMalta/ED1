@@ -17,7 +17,7 @@ Lista *cria_lista()
     {
         li->qtd = 0;
     }
-    return li; // desaloca
+    return li; 
 }
 
 int insere_lista_final(Lista *li, struct aluno al)
