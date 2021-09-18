@@ -11,7 +11,7 @@ int quantidade_alunos(Lista* li); // OK
 // EX02
 Lista* criar_lista(); // OK
 void reallocar_lista(Lista *li); // OK
-int compactar_lista(Lista *li);
+int compactar_lista(Lista *li); // OK
 
 //EX01
 void libera_lista(Lista* li); // OK

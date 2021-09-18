@@ -8,7 +8,8 @@ struct lista
 {
     int qtd;
     struct aluno *dados; // Não sei quanto alunos serão cadastrados
-    int tam;
+    int tamIn;
+    int tamAt;
 };
 
 //EX02
@@ -21,7 +22,8 @@ Lista *criar_lista(int tam) {
     li->qtd=0;
     li->dados = malloc(tam*sizeof(struct aluno));
     if(li->dados != NULL){
-      li->tam= tam;
+      li->tamAt = tam;
+      li->tamIn = tam;
       return li;
     }
   }
@@ -30,12 +32,11 @@ Lista *criar_lista(int tam) {
 
 
 void reallocar_lista(Lista *li){
-
     struct aluno *al;
-    al = realloc(li->dados, (2 * li->tam) * sizeof(struct aluno));
+    al = realloc(li->dados, (2 * li->tamIn) * sizeof(struct aluno));
     if(al != NULL){
         li->dados = al;
-        li->tam = (li->tam * 2);
+        li->tamAt += li->tamIn;
     }
 }
 
@@ -44,9 +45,13 @@ int compactar_lista(Lista *li){
   if(li == NULL || li->dados==NULL){
     return -1;
   }
-  int tam = ceil(((float)li->qtd)/(float)li->tam)*li->tam;
-  li->dados = realloc(li->dados, li->tam*sizeof(struct aluno));
-  li->tam = tam;
+  int tam = ceil((li->qtd)/li->tamIn)*li->tamIn;
+  if(li->qtd > tam){
+      return -1;
+  }
+  struct aluno *al;
+  li->dados = realloc(li->dados, tam * sizeof(struct aluno));
+  li->tamAt = tam;   
   return 0;
 }
 
@@ -65,7 +70,7 @@ int insere_lista_inicio(Lista *li, struct aluno al){
     if (li == NULL){
         return -1;
     } 
-    if (li->qtd == li->tam){
+    if (li->qtd == li->tamAt){
         reallocar_lista(li);
     }
     if(li==NULL){
@@ -86,7 +91,7 @@ int insere_lista_final(Lista *li, struct aluno al){
     if (li == NULL){
         return -1;
     } 
-    if (li->qtd == li->tam){
+    if (li->qtd == li->tamAt){
         reallocar_lista(li);
     }
     if (li == NULL){
@@ -102,7 +107,7 @@ int insere_lista_ordenada(Lista *li, struct aluno al){
     if (li == NULL){
         return -1;
     } 
-    if (li->qtd == li->tam){
+    if (li->qtd == li->tamAt){
         reallocar_lista(li);
     }
     if (li == NULL){
@@ -147,6 +152,7 @@ int imprime_lista(Lista *li){
 }
 
 void libera_lista(Lista *li){
+    free(li->dados);
     free(li);
 }
 
@@ -225,7 +231,7 @@ int tamanho_lista(Lista* li){
     if(li == NULL){
         return -1;
     }
-    return li->tam;
+    return li->tamAt;
 }
 
 int quantidade_alunos(Lista* li){
@@ -239,7 +245,7 @@ int lista_cheia(Lista* li){
     if(li == NULL){
         return -1;
     }
-    return (li->qtd == li->tam);
+    return (li->qtd == li->tamAt);
 }
 
 int lista_vazia(Lista* li){
