@@ -14,11 +14,15 @@ struct livros{
 // - Saída: índice do vetor indicando o livro usado mais antigo
 // (se houver empate pode ser retornado qualquer um dos livros)
 
+// check:<<<erro: e2.5a: Inicialização errada (deveria ser o maior valor possível) ou o ano do primeiro livro mais antigo>>>>
+// check:<<<erro: e2.6c: está comparando índice com o valor do ano>>>>
+// check:<<<erro: e2.6d: se todos os livros são novos o programa vai retornar errado>>>>
+
 int antigo(struct livros *l, int n){
     int ant = l[0].ano;
     for(int i = 0; i < n; i++){
         if(l[i].ano < ant && l[i].novo == 0){
-            ant = i;
+            ant = i;// check:<<<misturou ano com o índice i>>>>
         }
     }
     return ant;

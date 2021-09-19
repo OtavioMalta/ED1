@@ -27,9 +27,12 @@
 +-------------------+-----------------------------------------------+----------------+
 
 */
+// check:<<<erro: e3.1b: A função deve calcular e retornar por referência a porcentagem>>>>
+// check:<<<erro: e3.2: Faltou testar os valores inválidos dentro da função / teste errado / faltou alguns testes>>>>
 int calcula(float comp, float vend){
     int ret;
     float res;
+// check:<<<erro: e3.3: Cálculo com erros (não corresponde a porcentagem pedida OU erro na fórmula OU porcentagem baseada na venda e não na compra OU divisão inteira )>>>>
     res = (vend-comp)/vend*100;
     if(comp>=vend){
         return 1;
@@ -40,6 +43,7 @@ int calcula(float comp, float vend){
     }else if(res>40){
         return 4;
     }else if(res<0){
+    // check:<<<comentário: e3.4: o último teste é desnecessário E/OU alguns testes no IF são desnecessários>>>>
         return -1;
     }
 }
@@ -53,6 +57,9 @@ int main(){
     scanf("%f", &comp);
    printf("Digite o preco de venda:");
     scanf("%f", &vend);
+// check:<<<erro: e3.5a: Não mostrou a porcentagem>>>>
+// check:<<<erro: e3.6: e3.6: Chamada de função com erros (parâmetro de entrada e/ou saída) ou faltando a passagem por referência>>>>
+
     r = calcula(comp, vend);
     if(r == -1){
         printf("[ERRO] Valor invalido!!!");

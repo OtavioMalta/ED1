@@ -13,6 +13,7 @@ struct livros{
     char nome[20];
     float preco;
     int novo; //1 para usado 0 para novo
+    // check:<<<comentário: dado o nome da variável, melhor seria 0 para novo e 1 para usado>>>>
     int ano;
 };
 

@@ -9,6 +9,7 @@ struct circulo{
     struct ponto centro;
     int raio;
 };
+// check:<<<erro: use valores reais>>>>
 
 int main(){
     struct circulo c;
