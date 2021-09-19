@@ -14,7 +14,7 @@ int main()
 
     struct aluno aluno;
     
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 8; i++)
     {
         printf("Dados do alunos:");
         scanf("%d%s%f%f%f", &matricula, nome, &n1, &n2, &n3);
@@ -25,11 +25,18 @@ int main()
         aluno.n2 = n2;
         aluno.n3 = n3;
 
-        int ret=insere_lista_inicio(alunos_pet, aluno);
+        /*int ret=insere_lista_inicio(alunos_pet, aluno);
         if (ret == -1 ){
             printf("\nErro: lista cheia");
         }
-       // insere_lista_final(alunos_pet, aluno);
+        int ret=insere_lista_final(alunos_pet, aluno);
+        if (ret == -1 ){
+            printf("\nErro: lista cheia");
+        }*/
+        int ret=insere_lista_ordenada(alunos_pet, aluno);
+        if (ret == -1 ){
+            printf("\nErro: lista cheia");
+        }
         
         if (aluno.n1 >60){
             insere_lista_final(alunos_enade,aluno);
@@ -38,12 +45,27 @@ int main()
 
     struct aluno a;
     consulta_lista_pos(alunos_pet,1,&a);
-    
+
+    printf("\n-------------------------\n");
     imprime_lista(alunos_pet);
-    printf("\nenade\n");
-    //imprime_lista(alunos_enade);
+    printf("\nMatricula do aluno na posicao 1: %d",a.matricula);
+    // printf("\nenade\n");
+    // imprime_lista(alunos_enade);
 
-    printf("\n mat %d",a.matricula);
+    printf("\nRemovendo um aluno\n");
+    remove_lista(alunos_pet, 3);
+    imprime_lista(alunos_pet);
 
+    printf("\nRemovendo um aluno do inicio\n");
+    remove_lista_inicio(alunos_pet);
+    imprime_lista(alunos_pet);
+
+    printf("\nRemovendo um aluno do final\n");
+    remove_lista_final(alunos_pet);
+    imprime_lista(alunos_pet);
+
+    printf("\nRemovendo um aluno (otimizado)\n");
+    remove_lista_otimizado(alunos_pet, 5);
+    imprime_lista(alunos_pet);
     libera_lista(alunos_pet);
 }
