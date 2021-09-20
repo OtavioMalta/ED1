@@ -1,0 +1,12 @@
+Instruções da prova
+
+- Desligue seu celular e saia de todas suas redes sociais. Isso ajuda e evitar distrações e pedidos inoportunos de plágio.
+- Responder todos os exercícios nos respectivos arquivos do enunciado (ex01.c, ex02.c e ex03.c)
+- Caso prefira, implemente os exercícios utilizando os TADs que você fez para os laboratórios. No entanto, a entrega deve ser feita alterando os arquivos acima
+- Verifique se ao entregar a indentação foi mantida e se todas as funções utilizadas pelo exercício estão presentes na resposta
+- Não entregar outras funções do TAD que não são usadas. Entregar somente a função solicitada pelo enunciado.
+- Você é livre para usar os TADs feitos para a prática, mas para a prova envie somente o que foi pedido no exercício.
+- Qualquer exercício copiado de um colega ou da internet implicará nota zero em toda a prova, mesmo que a cópia seja feita somente de um trecho.
+- A nota será zerada tanto para quem deixou copiar quanto para quem fez a cópia.
+- Não enviar o enunciado nem as respostas para os colegas.
+- Seja ético.
