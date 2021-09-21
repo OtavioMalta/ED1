@@ -15,5 +15,6 @@ typedef struct TLinkedList TLinkedList;
 TLinkedList *list_create();
 int list_free(TLinkedList *list);
 int list_push_front(TLinkedList *list, struct aluno al);
+int list_push_back(TLinkedList *list, struct aluno al);
 //int insere_lista_inicio(Lista *li, struct aluno al)
 
