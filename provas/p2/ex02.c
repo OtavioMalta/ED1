@@ -12,3 +12,23 @@ Exemplo de chamada da função:
 remove_intervalo_lista(lista,5,9)
 
 */
+
+int remove_intervalo_lista(Lista* li, int min, int max){
+    if(li == NULL){
+        return -1;
+    }
+    if(min < 1 || max < min || max < 1 || min < 1){
+        return -1;
+    }
+    int k, i=max;
+    while(i>=min){
+        li->qtd--;
+        k=i;
+        while(k >= min){
+            li->dados[k-1] = li->dados[k];
+            k--;
+        }
+        i--;
+    }
+    return 0;
+}
