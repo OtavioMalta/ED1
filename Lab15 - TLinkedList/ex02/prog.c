@@ -35,20 +35,23 @@ int main(){
     e.n2 = 5;
     e.n3 = 5;
 
+    temp = list_print(alunos_pet);
+    if(temp <= -1){printf("ERRO");}
+
+    printf("1");
+
+    temp = list_push_back(alunos_pet, c);
+    if(temp <= -1){printf("ERRO");}
+
+    temp = list_push_front(alunos_pet, a);
+    if(temp <= -1){printf("ERRO");}
+
     temp = list_insert_sorted(alunos_pet, e);
     if(temp <= -1){printf("ERRO");}
 
-    temp = list_insert_sorted(alunos_pet, c);
-    if(temp <= -1){printf("ERRO");}
-
-    temp = list_insert_sorted(alunos_pet, a);
-    if(temp <= -1){printf("ERRO");}
-
-    temp = list_insert_sorted(alunos_pet, b);
-    if(temp <= -1){printf("ERRO");}
-
     int tam = list_size(alunos_pet);
-    printf("Tamanho: %d", tam);
+    printf("tamanho: %d", tam);
+
     temp = list_print(alunos_pet);
     if(temp <= -1){printf("ERRO");}
 
@@ -68,15 +71,17 @@ int main(){
 
     printf("\nREMOVENDO 1");
     temp = list_pop_front(alunos_pet);
-    if(temp <= -1){printf("ERRO");}
-
+    if(temp <= -1){printf("ERRguO");}
+    list_print(alunos_pet);
+    list_pop_front(alunos_pet);
+    list_pop_front(alunos_pet);
     printf("\n---------\n");
     list_print(alunos_pet);
     printf("\n---------\n");
     struct aluno *f;
     f = malloc(sizeof(struct aluno));
     printf("\nPrimeiro aluno\n");
-    temp = list_find_pos(alunos_pet, 2, f);
+    temp = list_pop_front(alunos_pet);
     if(temp == 0){
       printf("Matricula: %d\nAluno: %s\n", f->matricula, f->nome);
     } else {
