@@ -5,7 +5,7 @@
 
 int main(){
     TLinkedList *alunos_pet;
-    alunos_pet = list_create();
+    alunos_pet = list_create(1);
     int temp;
 
     struct aluno a,b,c,d,e;
@@ -38,12 +38,10 @@ int main(){
     temp = list_print(alunos_pet);
     if(temp <= -1){printf("ERRO");}
 
-    printf("1");
-
-    temp = list_push_back(alunos_pet, c);
+    temp = list_insert_sorted(alunos_pet, c);
     if(temp <= -1){printf("ERRO");}
 
-    temp = list_push_front(alunos_pet, a);
+    temp = list_insert_sorted(alunos_pet, a);
     if(temp <= -1){printf("ERRO");}
 
     temp = list_insert_sorted(alunos_pet, e);
@@ -71,22 +69,19 @@ int main(){
 
     printf("\nREMOVENDO 1");
     temp = list_pop_front(alunos_pet);
-    if(temp <= -1){printf("ERRguO");}
-    list_print(alunos_pet);
-    list_pop_front(alunos_pet);
-    list_pop_front(alunos_pet);
+    if(temp <= -1){printf("ERRO");}
+
     printf("\n---------\n");
     list_print(alunos_pet);
     printf("\n---------\n");
-    struct aluno *f;
-    f = malloc(sizeof(struct aluno));
-    printf("\nPrimeiro aluno\n");
-    temp = list_pop_front(alunos_pet);
-    if(temp == 0){
-      printf("Matricula: %d\nAluno: %s\n", f->matricula, f->nome);
-    } else {
-      printf("ERRO\n");
-    }
+    
+    printf("\n------------\n");
+    list_pop_front(alunos_pet);
+    tam = list_size(alunos_pet);
+    printf("tamanho: %d", tam);
+    list_print(alunos_pet);
+
+    list_free(alunos_pet);
     return 0;
 }
 

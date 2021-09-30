@@ -278,6 +278,7 @@ int list_pop_front(TLinkedList *list){
     aux = list->head->next;
     free(list->head);
     list->head = aux;
+    return SUCCESS;
 }
 
 int list_pop_back(TLinkedList *list){

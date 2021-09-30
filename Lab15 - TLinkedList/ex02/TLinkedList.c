@@ -13,15 +13,19 @@ struct list_node
 struct TLinkedList
 {
     list_node *head;
+    int size;
+    int sorted;
 };
 
-TLinkedList *list_create()
+TLinkedList *list_create(int s)
 {
     TLinkedList *list;
     list = malloc(sizeof(TLinkedList));
     if (list != NULL)
     {
         list->head = NULL;
+        list->sorted = s;
+        list->size = 0;
     }
     return list;
 }
@@ -31,6 +35,9 @@ int list_push_front(TLinkedList *list, struct aluno al)
     if (list == NULL)
     {
         return INVALID_NULL_POINTER;
+    }
+    if(list->sorted == 1){
+        return INVALID_FUNCTION;
     }
     else
     {
@@ -44,6 +51,7 @@ int list_push_front(TLinkedList *list, struct aluno al)
         node->next = list->head;
 
         list->head = node;
+        list->size++;
         return SUCCESS;
     }
 }
@@ -53,6 +61,9 @@ int list_push_back(TLinkedList *list, struct aluno al)
     if (list == NULL)
     {
         return INVALID_NULL_POINTER;
+    }
+    if(list->sorted == 1){
+        return INVALID_FUNCTION;
     }
     else
     {
@@ -79,6 +90,7 @@ int list_push_back(TLinkedList *list, struct aluno al)
             }
             aux->next = node;
         }
+        list->size++;
         return SUCCESS;
     }
 }
@@ -124,6 +136,7 @@ int list_free(TLinkedList *list)
             list->head = aux->next;
             // list->head = list->head->next;  (outra opção)
             free(aux);
+            list->size = list->size - 1;
             aux = list->head;
         }
         // segunda forma
@@ -144,6 +157,9 @@ int list_insert_sorted(TLinkedList *list, struct aluno al)
     if (list == NULL)
     {
         return INVALID_NULL_POINTER;
+    }
+    if(list->sorted != 1){
+        return INVALID_FUNCTION;
     }
     else
     {
@@ -174,17 +190,21 @@ int list_insert_sorted(TLinkedList *list, struct aluno al)
             prev->next = node;
             node->next = curr;
         }
+        list->size++;
         return SUCCESS;
     }
 }
 
 int list_insert(TLinkedList *list, int pos, struct aluno al){
-    if(pos < 1 || pos > list_size(list)+1){
+    if(pos < 1 || pos > (list->size)+1){
         return OUT_OF_RANGE;
     }
     if (list == NULL)
     {
         return INVALID_NULL_POINTER;
+    }
+    if(list->sorted == 1){
+        return INVALID_FUNCTION;
     }
     
     list_node *n,*aux,*aux2;
@@ -197,6 +217,7 @@ int list_insert(TLinkedList *list, int pos, struct aluno al){
         aux = list->head->next;
         list->head->data =al;
         list->head->next = aux;
+        list->size++;
         return SUCCESS;
     }
     aux = NULL;
@@ -211,6 +232,7 @@ int list_insert(TLinkedList *list, int pos, struct aluno al){
     }
     aux->next = n;
     n->next = aux2;
+    list->size++;
     return SUCCESS;
 }
 
@@ -219,14 +241,7 @@ int list_size(TLinkedList *list){
     {
         return INVALID_NULL_POINTER;
     }
-    int i = 0;
-    list_node *aux;
-    aux = list->head;
-    while(aux!=NULL){
-        i++;
-        aux = aux->next;
-    }
-    return i;
+    return list->size;
 }
 
 int list_front(TLinkedList *list, struct aluno *al){
@@ -267,6 +282,9 @@ int list_get_pos(TLinkedList *list, int mat, int *pos){
 }
 
 int list_pop_front(TLinkedList *list){
+    if(list->size == 0){
+        return INVALID_FUNCTION;
+    }
     if (list == NULL)
         {
             return INVALID_NULL_POINTER;
@@ -278,6 +296,8 @@ int list_pop_front(TLinkedList *list){
     aux = list->head->next;
     free(list->head);
     list->head = aux;
+    list->size--;
+    return SUCCESS;
 }
 
 int list_pop_back(TLinkedList *list){
@@ -285,6 +305,10 @@ int list_pop_back(TLinkedList *list){
         {
             return INVALID_NULL_POINTER;
         }
+        
+    if(list->size == 0){
+        return INVALID_FUNCTION;
+    }
     if(list->head == NULL){
         return ELEM_NOT_FOUND;
     }
@@ -297,10 +321,12 @@ int list_pop_back(TLinkedList *list){
     if(prev == NULL){
         free(curr);
         list->head == NULL;
+        list->size = list->size - 1;
         return SUCCESS;
     }
     free(curr);
     prev->next = NULL;
+    list->size = list->size - 1;
     return SUCCESS;
 }
 
@@ -324,10 +350,12 @@ int list_erase_data(TLinkedList *list, int mat){
     if(prev == NULL){
         free(curr);
         list->head == NULL;
+        list->size = list->size - 1;
         return SUCCESS;
     }
     prev->next = curr->next;
     free(curr);
+    list->size = list->size - 1;
     return SUCCESS;
 }
 
@@ -354,10 +382,12 @@ int list_erase_pos(TLinkedList *list, int pos){
     if(prev == NULL){
         free(curr);
         list->head == NULL;
+        list->size = list->size - 1;
         return SUCCESS;
     }
     prev->next = curr->next;
     free(curr);
+    list->size = list->size - 1;
     return SUCCESS;
 }
 
@@ -384,7 +414,7 @@ int list_find_pos(TLinkedList *list, int pos, struct aluno *al){
 }
 
 int list_find_mat(TLinkedList *list, int nmat, struct aluno *al){
-    if (list == NULL)
+    if(list == NULL)
         {
             return INVALID_NULL_POINTER;
         }
