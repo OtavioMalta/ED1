@@ -66,6 +66,37 @@ int main(){
     if(temp!=0){printf("ERRO ao imprimir!\n");}
     else{printf("\n\nO aluno na posicao 2 e %s\n\n", f.nome);}
    
+    temp = list_print_forward(alunos);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+
+    temp = list_pop_front(alunos);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
+
+    temp = list_erase(alunos, 4);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
+
+    temp = list_erase(alunos,2);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
+
+    tam = list_size(alunos);
+    printf("%d",tam);
+    temp = list_erase(alunos,1);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
+
+
+    tam = list_size(alunos);
+    printf("%d",tam);
+    temp = list_erase(alunos,2);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
+
+    temp = list_erase(alunos,1);
+    if(temp!=0){printf("ERRO ao imprimir!\n");}
+    else{list_print_forward(alunos);}
 
     temp = list_free(alunos);
     if(temp!=0){printf("ERRO ao liberar a lista!");

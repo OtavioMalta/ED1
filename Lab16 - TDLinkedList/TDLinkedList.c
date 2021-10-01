@@ -260,3 +260,81 @@ int list_find_pos(TDLinkedList *list, int pos, struct aluno *al){
     return ELEM_NOT_FOUND;
 }
 
+int list_pop_front(TDLinkedList *list){
+    if(list == NULL){
+        return INVALID_NULL_POINTER;
+    }
+    if(list->begin == NULL || list->size == 0){
+        return OUT_OF_RANGE;
+    }
+    DLNode *node;
+    node = list->begin;
+    list->begin = node->next;
+    if(list->begin != NULL){ 
+        list->begin->prev = NULL;
+    }else{
+        list->end = NULL;
+    }
+    free(node);
+    list->size--;
+    return SUCCESS;
+}
+
+int list_pop_back(TDLinkedList *list){
+    if(list == NULL){
+        return INVALID_NULL_POINTER;
+    }
+    if(list->begin == NULL || list->size == 0){
+        return OUT_OF_RANGE;
+    }
+    DLNode *node;
+    node = list->end;
+    list->end = node->prev;
+    if(list->end != NULL){ 
+        list->end->next = NULL;
+    }else{
+        list->begin = NULL;
+    }
+    free(node);
+    list->size--;
+    return SUCCESS;
+}
+
+int list_erase(TDLinkedList *list, int pos){
+     if(list == NULL){
+        return INVALID_NULL_POINTER;
+    }
+    if(list->begin == NULL || list->size == 0 || pos > list->size || pos < 1){
+        return OUT_OF_RANGE;
+    }
+
+    DLNode *node, *aux = NULL;
+    node = list->begin;
+    if(pos == 1){
+        list->begin = node->next;
+        if(list->size == 1){
+            list->end = NULL;
+        }else{
+            list->begin->prev = NULL;
+        }
+        free(node);
+        list->size--;
+        return SUCCESS;
+    }
+    int p = 1;
+    while(p < pos){
+        p++;
+        aux = node;
+        node = node->next;
+    }
+    if(list->end == node){
+        aux->next = NULL;
+        list->end = aux;
+    }else{
+        aux->next = node->next;
+        node->next->prev = aux;
+    }
+    free(node);
+    list->size--;
+    return SUCCESS;
+}

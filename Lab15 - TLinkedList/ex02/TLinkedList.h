@@ -13,7 +13,7 @@ struct aluno{
 
 typedef struct TLinkedList TLinkedList;
 
-TLinkedList *list_create();
+TLinkedList *list_create(int size);
 int list_free(TLinkedList *list);//OK
 int list_push_front(TLinkedList *list, struct aluno al);//OK
 int list_push_back(TLinkedList *list, struct aluno al);//OK
