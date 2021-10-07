@@ -2,13 +2,9 @@
 #include "TStack.h"
 #include "TSeqList.h"
 
-
-
-// é possível criar a lista
 struct TStack{
     TLinkedList *list;
 };
-
 
 TStack *stack_create(){
     TStack *st;
@@ -67,7 +63,7 @@ int stack_empty(TStack *st)
     };
 }
 
-int stack_full(TStack *st)
+/*int stack_full(TStack *st)
 {
     if (st == NULL)
             return INVALID_NULL_POINTER;
@@ -76,7 +72,7 @@ int stack_full(TStack *st)
     }else{
         return 0;
     };
-}
+}*/
 
 int stack_print(TStack *st)
 {

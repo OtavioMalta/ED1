@@ -1,6 +1,7 @@
 #include "TStack.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 struct TStack{
     int qtd;
@@ -70,3 +71,46 @@ int stack_full(TStack *st){
     }
     return SUCCESS;
 }*/
+
+int bemFormada(char *str){
+    if(strlen(str) <= 1){return OUT_OF_RANGE;}
+    int tam = strlen(str);
+    char c;
+
+    TStack *st;
+
+    st = stack_create(tam);
+    if(st==NULL){return INVALID_NULL_POINTER;}
+    for(int i = 0;i<tam; i++){
+        if(str[i]=='(' || str[i]=='['|| str[i]=='{'){
+            stack_push(st, str[i]);
+        }
+        if(str[i]==')'){
+            stack_top(st,&c);
+            if(c !='(' || stack_empty(st)==1){
+                return 1;
+            }else{
+                stack_pop(st);
+            }
+        }
+        if(str[i] ==']'){
+            stack_top(st,&c);
+            if(c !='[' || stack_empty(st)==1){
+                return 1;
+            }else{
+                stack_pop(st);
+            }
+        }
+        if(str[i] =='}'){
+            stack_top(st,&c);
+            if(c !='{' || stack_empty(st)==1){
+                return 1;
+            }else{
+                stack_pop(st);
+            }
+        }
+    }
+    tam = stack_empty(st);
+    if(tam==0){return 1;}
+    else{return SUCCESS;}
+}

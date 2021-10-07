@@ -15,4 +15,4 @@ int stack_top(TStack *st, char *c);
 
 int stack_empty(TStack *st);
 int stack_full(TStack *st);
-//int stack_print(TStack *st);
+int bemFormada(char *str);

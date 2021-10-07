@@ -48,10 +48,6 @@ int main(){
     if(temp<0){printf("[ERRO]");
     }else{printf("\nEMPTY: %d",temp);}
 
-    temp = stack_full(st);
-    if(temp<0){printf("[ERRO]");
-    }else{printf("\nFULL: %d",temp);}
-
     temp = stack_push(st, e);
     if(temp<0){printf("[ERRO]");}
 
