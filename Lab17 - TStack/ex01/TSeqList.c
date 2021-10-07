@@ -9,10 +9,10 @@ struct lista
     struct aluno dados[MAX];
 };
 
-Lista *cria_lista()
+TSeqList *cria_lista()
 {
-    Lista *li;
-    li = (Lista *)malloc(sizeof(struct lista));
+    TSeqList *li;
+    li = (TSeqList *)malloc(sizeof(struct lista));
     if (li != NULL)
     {
         li->qtd = 0;
@@ -20,7 +20,7 @@ Lista *cria_lista()
     return li; 
 }
 
-int consulta_lista_pos(Lista *li, int pos, struct aluno *al)
+int consulta_lista_pos(TSeqList *li, int pos, struct aluno *al)
 {
     if (li == NULL)
         return -1;
@@ -30,7 +30,7 @@ int consulta_lista_pos(Lista *li, int pos, struct aluno *al)
     return 0;
 }
 
-int insere_lista_inicio(Lista *li, struct aluno al)
+int insere_lista_inicio(TSeqList *li, struct aluno al)
 {
     if (li == NULL)
         return -1;
@@ -47,7 +47,7 @@ int insere_lista_inicio(Lista *li, struct aluno al)
     return 0;
 }
 
-int insere_lista_final(Lista *li, struct aluno al)
+int insere_lista_final(TSeqList *li, struct aluno al)
 {
     if (li == NULL)
         return -1;
@@ -58,7 +58,7 @@ int insere_lista_final(Lista *li, struct aluno al)
     return 0;
 }
 
-int insere_lista_ordenada(Lista *li, struct aluno al)
+int insere_lista_ordenada(TSeqList *li, struct aluno al)
 {
     if (li->qtd == MAX || li == NULL)
         return -1;
@@ -76,7 +76,7 @@ int insere_lista_ordenada(Lista *li, struct aluno al)
     return 0;
 }
 
-int imprime_lista(Lista *li)
+int imprime_lista(TSeqList *li)
 {
     if (li == NULL)
         return -1;
@@ -85,8 +85,8 @@ int imprime_lista(Lista *li)
     {
         printf("\n----------------------");
         printf("\nMatricula: %d", li->dados[i].matricula);
-        printf("\nNome: %s\n", li->dados[i].nome);
-        printf("Notas: %.2f; %.2f; %.2f\n", li->dados[i].n1, li->dados[i].n2, li->dados[i].n3);
+        //printf("\nNome: %s\n", li->dados[i].nome);
+        //printf("Notas: %.2f; %.2f; %.2f\n", li->dados[i].n1, li->dados[i].n2, li->dados[i].n3);
     }
     /*
     struct aluno temp;
@@ -101,13 +101,13 @@ int imprime_lista(Lista *li)
     return 0;
 }
 
-void libera_lista(Lista *li)
+void libera_lista(TSeqList *li)
 {
     free(li);
 }
 
 
-int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
+int consulta_lista_mat(TSeqList* li, int mat, struct aluno *al){
     if(li->qtd == 0 || li == NULL){
         return -1;
     }
@@ -124,7 +124,7 @@ int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
     }
 }
 
-int remove_lista(Lista* li, int mat){
+int remove_lista(TSeqList* li, int mat){
     if(li->qtd == 0 || li == NULL){
         return -1;
     }
@@ -142,7 +142,7 @@ int remove_lista(Lista* li, int mat){
     return 0;
 }
 
-int remove_lista_inicio(Lista* li){
+int remove_lista_inicio(TSeqList* li){
     if(li->qtd == 0 || li == NULL){
         return -1;
     }
@@ -154,7 +154,7 @@ int remove_lista_inicio(Lista* li){
     return 0;
 }
 
-int remove_lista_final(Lista* li){
+int remove_lista_final(TSeqList* li){
     if(li->qtd == 0 || li == NULL){
         return -1;
     }
@@ -162,7 +162,7 @@ int remove_lista_final(Lista* li){
     return 0;
 }
 
-int remove_lista_otimizado(Lista* li, int mat){
+int remove_lista_otimizado(TSeqList* li, int mat){
     if(li->qtd == 0 || li == NULL){
         return -1;
     }
@@ -177,21 +177,21 @@ int remove_lista_otimizado(Lista* li, int mat){
     return 0; // Nao encontrado
 }
 
-int tamanho_lista(Lista* li){
+int tamanho_lista(TSeqList* li){
     if(li == NULL){
         return -1;
     }
     return li->qtd;
 }
 
-int lista_cheia(Lista* li){
+int lista_cheia(TSeqList* li){
     if(li == NULL){
         return -1;
     }
     return (li->qtd == MAX);
 }
 
-int lista_vazia(Lista* li){
+int lista_vazia(TSeqList* li){
     if(li == NULL){
         return -1;
     }
