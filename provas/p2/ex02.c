@@ -20,7 +20,10 @@ int remove_intervalo_lista(Lista* li, int min, int max){
     if(min < 1 || max < min || max < 1 || min < 1){
         return -1;
     }
+// check:<<<erro: e2.2: erro em testes de tamanho da lista com as posições de remoção (posições aceitas >=1 <=qtd/ teste de lista null // start>end>>>>
     int k, i=max;
+    // check:<<<erro: e2.3b: invade a memória (por exemplo se remover os últimos elementos) - não limitou à quantidade de elementos na lista>>>>
+    // check:<<<erro: e2.3: Um só laço deve ser usado O(n). Da forma como está envolve deslocar os mesmos elementos várias vezes O(N²)>>>>
     while(i>=min){
         li->qtd--;
         k=i;

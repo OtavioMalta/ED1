@@ -32,7 +32,10 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
-
+// check:<<<erro: e3.1: não fez os testes comparando o tamanho novo com o antiga para saber se o tamanho é maior OU fez o teste considerando somente o total de elementos  OU fez erros no teste>>>>
+// check:<<<erro: e3.2: O ideal é  utilizar uma outra variável para receber o que é retornado pelo realloc, pois se ele não funcionar os dados originais estarão preservados>>>>
+// check:<<<erro: e3.3: deve-se lembrar da representação linear da matriz na memória. Isso implica em reposicionar alguns elementos no vetor linear que estavam na matriz original>>>>
+// check:<<<erro: e3.4: Faltou zerar os novos elementos>>>>
 int mat2d_increase_size(TMat2D *mat, int r, int c){
     if(mat == NULL){
         return -1;
@@ -40,7 +43,7 @@ int mat2d_increase_size(TMat2D *mat, int r, int c){
     if(r<=0 || c<=0){
         return -1;
     }
-    mat = realloc(mat, r*c*sizeof(double));
+    mat = realloc(mat, r*c*sizeof(double));// check:<<<erro: misturou tipos>>>>
     if(mat != NULL){
         mat->ncolumns = c;
         mat->nrows = r;

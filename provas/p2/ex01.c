@@ -23,8 +23,8 @@ troca_pos_lista( lista, 4, 10)
 */
 
 int troca_pos_lista(Lista* li, int p1, int p2){
-    if(li == NULL || p1 < 1 || p2 < 1 || p1 == p2){
-        return -1;
+    if(li == NULL || p1 < 1 || p2 < 1 || p1 == p2){// check:<<<comentário: ser igual nao necessariamente é errado>>>>
+        return -1;// check:<<<erro: e1.2: erro em testes de tamanho da lista com as posições de troca (posições aceitas >=1 <=qtd/ teste de lista null>>>>
     }
     struct aluno aux;
     aux = li->dados[p1-1];
