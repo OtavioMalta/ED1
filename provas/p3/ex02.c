@@ -26,5 +26,24 @@ pre <-> in <-> pos
 */
 
 int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos){
+    if(pre == NULL || in == NULL || pos == NULL) {
+        return -1;
+    }
+    DLNode *aux;
+    aux = pos->end;
+    pre->size+= in->size + pos->size;
+    
+    in->end->next = pos->begin;
+    pos->begin->prev = in->end;
+    pos->begin = NULL;
+    pos->end = NULL;
+    pos->size = 0;
 
+    pre->end->next = in->begin;
+    in->begin->prev = pre->end;
+    in->begin = NULL;
+    in->end = NULL;
+    in->size = 0;
+    pre->end = aux;
+    return 0;
 }
