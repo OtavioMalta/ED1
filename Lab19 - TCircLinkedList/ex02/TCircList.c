@@ -59,11 +59,13 @@ int push_front(Lista *li, struct aluno a){
     if(li->end==NULL){
         li->end=n;
         n->next = n;
+        li->next = n;
         }
     n->dados = a;
 
     n->next = li->end->next;
     li->end->next=n;
+    li->next = n;
 
     return SUCCESS;
 }
@@ -78,6 +80,7 @@ int push_back(Lista *li, struct aluno a){
     if(li->end==NULL){
         li->end=n;
         n->next = n;
+        li->next = n;
         }
 
     n->dados = a;
@@ -85,6 +88,7 @@ int push_back(Lista *li, struct aluno a){
     n->next = li->end->next;
     li->end->next = n;
     li->end = n;
+    
 
     return SUCCESS;
 }
@@ -95,6 +99,9 @@ int pop_front(Lista *li){
     Elem *aux;
     if(li->end == li->end->next){
         li->end = NULL;
+    }
+    if(li->next == li->end->next){
+        li->next = li->end->next->next;
     }
     aux = li->end->next;
     li->end->next = li->end->next->next;
@@ -109,6 +116,9 @@ int pop_back(Lista *li){
     Elem *aux;
     if(li->end == li->end->next){
         li->end = NULL;
+    }
+    if(li->next == li->end){
+        li->next = li->end->next;
     }
     aux = li->end->next;
     while(aux->next!=li->end){
@@ -163,10 +173,11 @@ void list_print(Lista *li){
 }
 
 
-struct aluno next(Lista *li){
-    Elem *aux;
-    aux = li->next;
-    li->next=li->next->next;
+int  list_next(Lista *li, struct aluno *al){
+    if(li==NULL){return INVALID_NULL_POINTER;}
+    if(li->next==NULL){return ELEM_NOT_FOUND;}
 
-    return aux->dados;
+    *al = li->next->dados;
+    li->next = li->next->next;
+    return SUCCESS;
 }

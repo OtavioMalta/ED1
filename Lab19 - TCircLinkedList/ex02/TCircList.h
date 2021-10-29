@@ -24,4 +24,4 @@ int pop_back(Lista *li);
 int pop_front(Lista *li);
 int empty_list(Lista *li);
 void list_print(Lista *li);
-struct aluno next(Lista *li);
+int list_next(Lista *li, struct aluno *al);

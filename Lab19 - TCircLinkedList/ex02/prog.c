@@ -6,7 +6,7 @@
 int main()
 {
     int res;
-    struct aluno a, b, c, d;
+    struct aluno a, b, c, d, e;
     a.matricula = 1;
     strcpy(a.nome, "Artur");
     a.n1 = 1; a.n2 = 1; a.n3 = 1;
@@ -27,26 +27,28 @@ int main()
         printf("\nLista criada!\n");
     }
 
-    push_back(li, c);
-    push_back(li, b);
-    push_front(li, a);
+    res = push_front(li, c);
+    if(res != SUCCESS){printf("[ERRO AO ADICIONAR]");}
+    res = push_front(li, b);
+    if(res != SUCCESS){printf("[ERRO AO ADICIONAR]");}
+    res = push_front(li, a);
+    if(res != SUCCESS){printf("[ERRO AO ADICIONAR]");}
     
     int tam = list_size(li);
     printf("\n\nTAMANHO DA LISTA: %d", tam);
 
     list_print(li);
 
-    printf("Proximo aluno:");
-    d = next(li);
-    printf("Matricula: %d", d.matricula);
-
-    printf("Proximo aluno:");
-    d = next(li);
-    printf("Matricula: %d", d.matricula);
-
-    printf("Proximo aluno:");
-    d = next(li);
-    printf("Matricula: %d", d.matricula);
+    pop_back(li);
+    res = list_next(li, &e);
+    if(res != SUCCESS){printf("[ERRO AO ACESSAR O PROXIMO ELEMENTO]");}
+    printf("Proximo aluno : %d", e.matricula);
+    res = list_next(li, &e);
+    if(res != SUCCESS){printf("[ERRO AO ACESSAR O PROXIMO ELEMENTO]");}
+    printf("Proximo aluno : %d", e.matricula);
+    res = list_next(li, &e);
+    if(res != SUCCESS){printf("[ERRO AO ACESSAR O PROXIMO ELEMENTO]");}
+    printf("Proximo aluno : %d", e.matricula);
 
     res = list_free(li);
     if(res == SUCCESS){
