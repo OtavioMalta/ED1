@@ -32,7 +32,7 @@ int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos){
     DLNode *aux;
     aux = pos->end;
     pre->size+= in->size + pos->size;
-    
+    // check:<<<erro: e2.1 faltaram os testes para os casos de listas vazias>>>>
     in->end->next = pos->begin;
     pos->begin->prev = in->end;
     pos->begin = NULL;

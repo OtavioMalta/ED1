@@ -21,7 +21,7 @@ Expressão:
 (1 + -48)
 -47                 (TOPO: -47)
 -47 9               (TOPO: 9)
-(-47 - 9)
+(-47 - 9)// check:<<<erro:  9 - -47>>>>
 -56                 (TOPO: -56)
 
 Resultado: -56

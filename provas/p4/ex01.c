@@ -24,8 +24,10 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 #include <string.h>
 #include <stdlib.h>
 
+// check:<<<erro: parece que você está resolvendo o exercício de uma prova que apliquei em outro semestre>>>>
+
 int concatena(char *str1, char *str2, int tam1, int tam2, char *resultado, int *tam3){
-    int Total = tam1 + tam2 + 1; // '/0'
+    int Total = tam1 + tam2 + 1; // '/0'// check:<<<erro: pq /0 ? se o vetor é de inteiros?>>>>
     char *str3 = malloc(Total*sizeof(char));
     if(str3!=NULL){
         int i, j;

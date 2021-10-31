@@ -32,7 +32,8 @@ int main(){
     for(int r = 0; r < tam; r++){
         stack_top(st, &d);
         stack_pop(st);
-        stack_push(stRes, d);
+        stack_push(stRes, d);// check:<<<erro: não precisa dessa outra pilha, bastava mostrar a var d que estava tudo certo>>>>
     }
-    stack_print(stRes);
+    stack_print(stRes);// check:<<<erro: vai acabar mostrando a palvra na ordem original>>>>
+    // check:<<<erro: free>>>>
 }

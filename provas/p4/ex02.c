@@ -19,7 +19,7 @@ Na lista circular, há apenas um ponteiro apontando para o final da lista (já q
 é possível acessar tanto o último quanto o primeiro elemento) assim funções de inserção e 
 remoção (exceto as no início e no final da fila) se tornam O(n), pois vão precisar percorrer 
 a fila para encontrar o espaço solicitado.
-
+// check:<<<erro: os dois são circulares em alguma parte - essa diferença faltou explicar>>>>
 */
 #include <stdio.h>
 
@@ -37,6 +37,10 @@ struct CircList{
 };
 
 //B
+// check:<<<erro: faltou teste de lista vazia>>>>
+// check:<<<erro: fez o teste para saber se é a primeira vez que chama a função>>>>
+// check:<<<erro: não fez retorno de código de erro (padrão adotado no curso)>>>>
+
 struct aluno next_li(CircList *li){
     struct aluno al = li->next->dados;
     li->next = li->next->next;
